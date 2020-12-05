@@ -14,7 +14,7 @@ body{margin:40px auto;max-width:650px;line-height:1.6;font-size:18px;color:#444;
 <head>
   <meta content="text/html;charset=UTF-8" http-equiv="Content-Type"/>
   <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
-  <title>WebJack</title>
+
 
   <script src="webkitAudioContextMonkeyPatch.js"></script>
   <script src="jquery.min.js"></script>
@@ -31,7 +31,7 @@ body{margin:40px auto;max-width:650px;line-height:1.6;font-size:18px;color:#444;
 
 </head>
 <body>
-  <h1>WebJack Test</h1>
+  <h1 class="roboto">Ventilator Webjack Implementation</h1>
   <div style="float:middle;margin-bottom:10px;" class="equalizer"></div>
 
   <p>
@@ -51,6 +51,12 @@ body{margin:40px auto;max-width:650px;line-height:1.6;font-size:18px;color:#444;
   <p><button class="btn-begin">Click to begin using WebJack</button></p>
 
   <div style="clear:both;" class="webjack-log"></div>
+  
+  <p>
+    <button class="btn-baud">Change baud</button>
+    <button class="btn-freq">Change frequencies</button>
+  </p>
+
 
   <script>
   
@@ -155,7 +161,14 @@ body{margin:40px auto;max-width:650px;line-height:1.6;font-size:18px;color:#444;
       }
       connection.setProfile(profile);
     }
-
+    $('.btn-freq').click(function() {
+      var freqs = prompt('Enter low and high frequencies separated by a comma, like "1200,2400"',"1200,2400").split(',');
+      if (freqs) connection.setFrequencies(freqs[0], freqs[1]);
+    });
+    $('.btn-baud').click(function() {
+      var baud = prompt('Enter a baud (speed) that is a factor of 44100 and under 1225',441);
+      if (baud) connection.setBaud(baud);
+    });
 
 
   </script>
