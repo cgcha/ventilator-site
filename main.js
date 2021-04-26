@@ -25,7 +25,36 @@ jQuery(document).ready(function($) {
 
   
   let exampleJSON = {name: "John", age: 31, city: "New York"};
+  
+  let longJSON ={"widget": {
+    "debug": "on",
+    "window": {
+        "title": "Sample Konfabulator Widget",
+        "name": "main_window",
+        "width": 500,
+        "height": 500
+    },
+    "image": { 
+        "src": "Images/Sun.png",
+        "name": "sun1",
+        "hOffset": 250,
+        "vOffset": 250,
+        "alignment": "center"
+    },
+    "text": {
+        "data": "Click Here",
+        "size": 36,
+        "style": "bold",
+        "name": "text1",
+        "hOffset": 250,
+        "vOffset": 100,
+        "alignment": "center",
+        "onMouseUp": "sun1.opacity = (sun1.opacity / 100) * 90;"
+    }
+}}    
+  
   let exampleJSONString = JSON.stringify(exampleJSON);
+  let longJSONString = JSON.stringify(longJSON);
 
 
   // run this after a user interaction
@@ -38,7 +67,7 @@ jQuery(document).ready(function($) {
   }
   $('.Example2').click(fillText2);
   function fillText2() {
-	$('.userinput').val('Testing, not implemented yet.');
+	$('.userinput').val(longJSONString);
   }
   function initWebjack() {
 	let scriptEl = document.createElement('script');
