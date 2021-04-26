@@ -52,10 +52,12 @@ body{margin:40px auto;max-width:650px;line-height:1.6;font-size:18px;color:#444;
 
   <p>
     <form class="sendForm" style="display:inline;">
-      <input type="text" class="userinput">
+		<textarea class="userinput" rows="4" cols="50" placeholder="Input webjack information here."></textarea>
     </form>
-    <button class="send">Send</button>
-
+    
+  </p>
+  <p>
+    <button class="send" style="width:80px;">Send</button>
     <select id="prof" onchange="changeProfile(this.value)">
       <option value="0">SoftModem</option>
       <option value="1">LowFrequencies</option>
@@ -64,7 +66,6 @@ body{margin:40px auto;max-width:650px;line-height:1.6;font-size:18px;color:#444;
     </select>
 	<button class="btn-begin">Click to begin using WebJack</button>
   </p>
-
 		
   <p class="roboto">Raw input</p>
   <div style="clear:both;" class="webjack-log"></div>
@@ -132,7 +133,9 @@ body{margin:40px auto;max-width:650px;line-height:1.6;font-size:18px;color:#444;
         
         $('.btn-begin').hide()
           .click(touchStarted);
+		
 
+		
         connection = new WebJack.Connection(profile);
 
         connection.listen(function(data) {
