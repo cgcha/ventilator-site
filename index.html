@@ -25,7 +25,20 @@
 	overflow: auto;
 }
 
-body{margin:40px auto;max-width:650px;line-height:1.6;font-size:18px;color:#444;padding:0 10px; background-color: #bfbfbf}h1,h2,h3{line-height:1.2}</style></head>
+img{
+  max-width: 100%;
+  height: auto;
+  padding-left:10px;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: left
+}
+
+
+body{margin:40px auto;max-width:850px;line-height:1.6;font-size:18px;color:#444;padding:0 10px; background-color: #bfbfbf}h1,h2,h3{line-height:1.2}</style></head>
 
 <head>
   <meta content="text/html;charset=UTF-8" http-equiv="Content-Type"/>
@@ -52,7 +65,7 @@ body{margin:40px auto;max-width:650px;line-height:1.6;font-size:18px;color:#444;
 
   <p>
     <form class="sendForm" style="display:inline;">
-		<textarea class="userinput" rows="4" cols="78" placeholder="Input webjack information here."></textarea>
+		<textarea class="userinput" rows="4" cols="103" placeholder="Input webjack information here."></textarea>
     </form>
     
   </p>
@@ -83,13 +96,16 @@ body{margin:40px auto;max-width:650px;line-height:1.6;font-size:18px;color:#444;
     <button class="btn-freq">Change frequencies</button>
   </p>
   
-
-<div><p style="float: left;"><img src="webdev.png" alt="Crying" style="width:220px;height:245px; border="1px"><h3 class="roboto">How to use:</h3>
-<p class="roboto">Have two devices, one with a line in port, and a 3.5mm TRRS (aux) cable.</p>
-<p class="roboto">Plug the cable into the headphone/speaker port of the output device and into the line in of the input device, and press "Click to begin using WebJack" on both devices.</p>
-<p class="roboto">Type into the text box of the output device, and press send.</p>
+<div class="container">
+	<div><h3 class="roboto">How to use:</h3>
+		<p class="roboto">Have two devices, one with a line in port, and a 3.5mm TRRS (aux) cable.</p>
+		<p class="roboto">Plug the cable into the headphone/speaker port of the output device and into the line in of the input device, and press "Click to begin using WebJack" on both devices.</p>
+		<p class="roboto">Type into the text box of the output device, and press send.</p>
+	</div>
+	<div class="image">
+		<img src="webdev.png" alt="Crying by @tsunderemaids" style="border="5px">
+	</div>
 </div>
-
 
   <script src = "main.js"></script>
   
